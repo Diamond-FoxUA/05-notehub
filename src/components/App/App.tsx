@@ -11,6 +11,7 @@ import Pagination from '../Pagination/Pagination';
 import Modal from '../Modal/Modal';
 import NoteForm from '../NoteForm/NoteForm';
 import SearchBox from '../SearchBox/SearchBox';
+import Loader from '../Loader/Loader';
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -73,7 +74,7 @@ export default function App() {
         ) : (
           data && data.notes.length > 0 && <NoteList notes={data.notes} />
         )}
-        {isLoading && <p>Loading...</p>}
+        {isLoading && <Loader />}
       </div>
       <Toaster />
     </>
