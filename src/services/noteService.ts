@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { Note, NewNote, NoteId } from '../types/note';
+import type { Note, NewNote } from '../types/note';
 
 interface NotesHttpResponse {
   notes: Note[];
@@ -28,7 +28,7 @@ export async function createNote(newNote: NewNote): Promise<Note> {
   return response.data;
 }
 
-export async function deleteNote(id: NoteId): Promise<Note> {
+export async function deleteNote(id: string): Promise<Note> {
   const response = await api.delete<Note>(`/notes/${id}`);
   return response.data;
 }
